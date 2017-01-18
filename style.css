@@ -1,9 +1,10 @@
 .thewordinary-panel {
-  width: 116%;
-  margin: 0;
-  margin-left: -16px;
-  margin-top: -2px;
-  margin-bottom: 16px;
+    width: 116%;
+    margin: 0;
+    margin-left: -16px;
+    margin-top: -2px;
+    margin-bottom: 16px;
+    border: none;
 }
 body {
   width: 238px;
@@ -48,10 +49,17 @@ body {
 .panel-info>.panel-heading {
     color: #ffffff;
     background-color: #980000;
-    border-color: #bce8f1;
+    /* border-color: #bce8f1; */
 }
 .panel-info>.panel-heading {
     color: #ffffff;
     background-color: #00985a;
-    border-color: #bce8f1;
+    /* border-color: #bce8f1; */
+    background: url("thewordinary.png");
+    background-size: inherit;
+    height: 118px!important;
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 12px;
+        border: none;
 }
