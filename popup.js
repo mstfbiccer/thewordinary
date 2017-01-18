@@ -42,5 +42,5 @@ function enTRtranslate (word) {
     jQuery('#result').val(jQuery(data).find('text').text())
   });
 }
-
+//https://dictionary.yandex.net/api/v1/dicservice/lookup?key=dict.1.1.20170117T223051Z.cd71b9669265f5db.6f50b195ab4d45af66aa7bfb9dd90a6c90ce264b&lang=en-tr&text=how
 
