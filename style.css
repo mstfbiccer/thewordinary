@@ -50,3 +50,8 @@ body {
     background-color: #980000;
     border-color: #bce8f1;
 }
+.panel-info>.panel-heading {
+    color: #ffffff;
+    background-color: #00985a;
+    border-color: #bce8f1;
+}
