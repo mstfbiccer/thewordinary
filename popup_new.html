@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<script src="jquery.min.js"></script>
+<script src="popup.js"></script>
+<script src="angular/angular.min.js"></script>
+<script src="angular/angular-animate.min.js"></script>
+<script src="angular/angular-aria.min.js"></script>
+<script src="angular/angular-messages.min.js"></script>
+<!-- Angular Material Library -->
+<script src="angular/angular-material.min.js"></script>
+<script src="angular-module.js"></script>
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<body ng-app="TheWordinaryApp" ng-controller="AppCtrl">
+  <!-- Your application bootstrap  -->
+  <!-- HTML DESIGN -->
+  <div ng-cloak="md-inline-form" md-theme="TheWordinaryTheme">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 class="md-flex">The Wordinary</h2>
+      </div>
+    </md-toolbar>
+    <md-tabs class="md-accent" md-selected="data.selectedIndex" md-dynamic-height flex>
+      <md-tab id="tab1">
+        <md-tab-label class="material-icons"><i class="material-icons">translate</i></md-tab-label>
+        <md-tab-body>
+          <section layout="row" layout-sm="column" layout-align="center center" layout-wrap style="margin-top:10px;">
+            <md-input-container>
+              <label ng-model="turkish" id="deneme">Turkish</label>
+              <input>
+            </md-input-container>
+
+          </section>
+          <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+            <md-input-container>
+              <label>English</label>
+              <input>
+          </section>
+          <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+            <md-button class="md-raised" ng-click="gonder('asdasdasd')">TRANSLATE IT</md-button>
+          </section>
+          <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+            <md-input-container>
+              <label>Result</label>
+              <input id="result">
+            </md-input-container>
+
+          </section>
+        </md-tab-body>
+      </md-tab>
+      <md-tab id="tab2">
+        <md-tab-label><i class="material-icons">settings</i></md-tab-label>
+        <md-tab-body>
+          <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+            <div flex-xs flex-gt-xs="50" layout="column">
+              <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
+                <div class="md-padding" ng-cloak>
+                  <div>
+                    <md-input-container>
+                      <label>LEVEL</label>
+                      <md-select ng-model="selectedItem" md-selected-text="getSelectedText()">
+                        <md-optgroup label="items">
+                          <md-option ng-value="item" ng-repeat="item in items"> {{item.name}} </md-option>
+                        </md-optgroup>
+                      </md-select>
+                    </md-input-container>
+                  </div>
+                </div>
+                <!-- md auto complete start-->
+                <div ng-controller="AppCtrl2 as ctrl" layout="column" ng-cloak>
+                  <md-content class="md-padding" layout="column">
+                    <md-chips ng-model="ctrl.selectedVegetables" md-autocomplete-snap md-transform-chip="ctrl.transformChip($chip)" md-require-match="ctrl.autocompleteDemoRequireMatch">
+                      <md-autocomplete md-selected-item="ctrl.selectedItem" md-search-text="ctrl.searchText" md-items="item in ctrl.querySearch(ctrl.searchText)"
+                        md-item-text="item.name" placeholder="Select for a category">
+                        <span md-highlight-text="ctrl.searchText">{{item.categoryName}}</span>
+                      </md-autocomplete>
+                      <md-chip-template>
+                        <span>
+          <strong>{{$chip.words}}</strong>
+        </span>
+                      </md-chip-template>
+                    </md-chips><br>
+                    <h5 style="
+                    color: crimson;
+                    text-align: center;
+                    border-bottom: 1px dashed #2196f3;
+                    padding-bottom: 11px;"> TOP CATEGORIES </h5>
+                    <md-list>
+                      <md-list-item ng-repeat="cat in ctrl.randomCategories">
+                        <h6>{{cat.categoryName}}</h6>
+                      </md-list-item>
+                    </md-list>
+                  </md-content>
+                </div>
+                <!-- md auto complete finish-->
+              </md-card>
+            </div>
+          </section>
+        </md-tab-body>
+
+      </md-tab>
+      <md-tab id="tab3">
+        <md-tab-label><i class="material-icons">account_circle</i></md-tab-label>
+        <md-tab-body>
+          <div flex-xs flex-gt-xs="50" layout="column">
+            <md-card style="text-align: center;">
+              <img ng-src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Circle-icons-profle.svg/768px-Circle-icons-profle.svg.png"
+                style="width: 35%;margin-left: 96px;" class="md-card-image">
+              <md-card-title>
+                <md-card-title-text>
+                  <span class="md-headline">{{profileName}}</span>
+                </md-card-title-text>
+              </md-card-title>
+              <md-card-content>
+                <p>
+                  {{description}}
+                </p>
+              </md-card-content>
+              <md-card-actions layout="row" layout-align="center center">
+                <md-button>Sign In</md-button>
+              </md-card-actions>
+            </md-card>
+            <md-card style="text-align: center;">
+              <md-card-title>
+                <md-card-title-text>
+                  <span class="md-subline">Current Level : {{currentLevel}}</span>
+                </md-card-title-text>
+              </md-card-title>
+              <md-card-content>
+                <p>
+                 Selected Categories :  {{selectedCategories}}
+                </p>
+              </md-card-content>
+            </md-card>
+          </div>
+
+        </md-tab-body>
+
+      </md-tab>
+    </md-tabs>
+    <style>
+      .chipsdemoCustomInputs md-content.autocomplete {
+        min-height: 200px;
+      }
+      
+      .chipsdemoCustomInputs input[type=number] {
+        width: 110px;
+      }
+      
+      .chipsdemoCustomInputs .veggie-option {
+        float: left;
+        width: 20%;
+        box-sizing: border-box;
+        padding: 0 8px;
+      }
+      
+      md-chips.md-default-theme md-chip,
+      md-chips md-chip {
+        background: rgb(33, 150, 243);
+        color: rgb(255, 255, 255);
+        font-size: 11px;
+      }
+      
+      .chipsdemoCustomInputs .veggie-option .md-item-text h3,
+      .chipsdemoCustomInputs .veggie-option .md-item-text p {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </div>
+</body>
+
+</html>
