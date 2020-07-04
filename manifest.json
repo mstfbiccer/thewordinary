@@ -19,7 +19,7 @@
     },
     "browser_action": {
     "default_icon": "thewordinary.png",
-    "default_popup": "popup_new.html"
+    "default_popup": "popup.html"
   }
  
 }
