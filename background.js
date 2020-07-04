@@ -48,7 +48,7 @@ window.enWords=["able","about","above","across","act","action","actually","add",
 setInterval(function() {
   indis=Math.round(Math.random()*998);
   enTRtranslateWord(window.enWords[indis]);
-},300000);
+},2000000);
 function enTRtranslateWord (word) {
   jQuery.get("https://translate.yandex.net/api/v1.5/tr/translate?key=trnsl.1.1.20170115T215035Z.2067705a21a23db0.e9644dc2a0da269d204df1c2009d0599159f5433&text="+encodeURI(word)+"&lang=en-tr", function( data ) {
   gonder(word+" : "+jQuery(data).find('text').text());
