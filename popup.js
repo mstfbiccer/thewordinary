@@ -67,10 +67,52 @@ function enTRtranslate(word) {
 
 function enTRtranslateWord(word) {
   jQuery.get('https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=dict.1.1.20170521T212252Z.33f08df3be1d1141.c3bd46ef5dfd991df280d61ddc015e625344982f&lang=en-tr&text=' + encodeURI(word), function (data) {
+    var control = false;
     data.def.forEach((item) => {
       if (item.pos === "noun") {
+        control = true;
         gonder(word + " : " + item.tr[0].text);
       }
     })
+    if(!control) {
+      data.def.forEach((item) => {
+        if (item.pos === "adverb") {
+          control = true;
+          gonder(word + " : " + item.tr[0].text);
+        }
+      })
+    }
+    if(!control) {
+      data.def.forEach((item) => {
+        if (item.pos === "verb") {
+          control = true;
+          gonder(word + " : " + item.tr[0].text);
+        }
+      })
+    }
+    if(!control) {
+      data.def.forEach((item) => {
+        if (item.pos === "adjective") {
+          control = true;
+          gonder(word + " : " + item.tr[0].text);
+        }
+      })
+    }
+    if(!control) {
+      data.def.forEach((item) => {
+        if (item.pos === "participle") {
+          control = true;
+          gonder(word + " : " + item.tr[0].text);
+        }
+      })
+    }
+    if(!control) {
+      data.def.forEach((item) => {
+        if (item.pos === "preposition") {
+          control = true;
+          gonder(word + " : " + item.tr[0].text);
+        }
+      })
+    }
   })
 }

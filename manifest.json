@@ -1,25 +1,23 @@
 {
-	"manifest_version": 2,
+  "manifest_version": 2,
 
-	"name": "The Wordinary",
-	"description": "",
-	"version": "2.2",
-   "background": {
-    "scripts": ["background.js","jquery.min.js"]
+  "name": "The Wordinary",
+  "description": "",
+  "version": "2.3",
+  "background": {
+    "scripts": ["background.js", "jquery.min.js"]
   },
-	"permissions": [
+  "permissions": [
     "notifications",
-     "contextMenus",
-     "storage"
-	],
-     "icons": {
-        "128": "thewordinary.png",
-        "16" : "thewordinary.png",
-        "48" : "thewordinary.png"  
-    },
-    "browser_action": {
+    "storage"
+  ],
+  "icons": {
+    "128": "thewordinary.png",
+    "16": "thewordinary.png",
+    "48": "thewordinary.png"
+  },
+  "browser_action": {
     "default_icon": "thewordinary.png",
     "default_popup": "popup.html"
   }
- 
 }
