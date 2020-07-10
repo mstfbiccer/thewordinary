@@ -6,17 +6,20 @@
     margin-bottom: 16px;
     border: none;
 }
+
 body {
-  width: 300px;
-  height: 500px;
+    width: 300px;
+    height: 415px;
 }
+
 .signed {
-  font-family: sans-serif;
-  right: 3px;
-  position: absolute;
-  color: gray;
-  margin-top: -14px;
+    font-family: sans-serif;
+    right: 3px;
+    position: absolute;
+    color: gray;
+    margin-top: -14px;
 }
+
 .panel-title {
     margin-top: 0;
     margin-bottom: 0;
@@ -24,9 +27,11 @@ body {
     color: inherit;
     text-align: center;
 }
+
 .contentDiv {
-  text-align: center;
+    text-align: center;
 }
+
 .form-control {
     display: block;
     width: 100%;
@@ -41,26 +46,28 @@ body {
     background-image: none;
     border: 1px solid #ccc;
     border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
+
 .panel-info>.panel-heading {
     color: #ffffff;
     background-color: #980000;
     /* border-color: #bce8f1; */
 }
+
 .panel-info>.panel-heading {
     color: #ffffff;
     background-color: #00985a;
     /* border-color: #bce8f1; */
     background: url("thewordinary.png");
     background-size: inherit;
-    height: 118px!important;
+    height: 118px !important;
     background-repeat: no-repeat;
     background-position-x: 50%;
     background-position-y: 12px;
-        border: none;
+    border: none;
 }
